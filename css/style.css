@@ -200,6 +200,10 @@ main{
    /* opacity: 0.8; */
    
 }
+.service_article:hover,.service_article:focus,.service_article:active{
+ outline: none;
+ border: 0;
+}
 .service_articles__box{
   padding-top: 14vh;
   /* background: url(/img/Gif/image-serv-purple.gif) no-repeat ; */

@@ -1345,7 +1345,7 @@ height: 100%;
 }
 .our-command_block_name > h2::after{
   content: " ";
-  width: 555px;
+  width: 25vw;
   height: 2px;
   top: 16vh;
   right: 0;

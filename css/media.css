@@ -113,29 +113,29 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 700px;
+  width: 50vw;
   height: 100vh;
 }
 .hww_background-1 > .hww_background-img,.hww_background-2 > .hww_background-img,.hww_background-3 > .hww_background-img{
-  width: 700px;
+  width: 50vw;
   height: 100vh;
 }
 .how-we-work._active_scroll  .hww_background-1{
 
-  width: 700px;
+  width: 50vw;
   height: 100vh;
 
   }
   .how-we-work._active_scroll .hww_background-2{
 
-    width: 700px;
+    width: 50vw;
     height: 100vh;
 
     
     }
     .how-we-work._active_scroll .hww_background-3{
 
-      width: 700px;
+      width: 50vw;
       height: 100vh;
 
       
@@ -1184,29 +1184,29 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 450px;
+  width: 40vw;
   height: 100vh;
 }
 .hww_background-1 > .hww_background-img,.hww_background-2 > .hww_background-img,.hww_background-3 > .hww_background-img{
-  width: 450px;
+  width: 40vw;
   height: 100vh;
 }
 .how-we-work._active_scroll  .hww_background-1{
 
-  width: 450px;
+  width: 40vw;
   height: 100vh;
 
   }
   .how-we-work._active_scroll .hww_background-2{
 
-    width: 450px;
+    width: 40vw;
     height: 100vh;
 
     
     }
     .how-we-work._active_scroll .hww_background-3{
 
-      width: 450px;
+      width: 40vw;
       height: 100vh;
 
       
@@ -2605,26 +2605,26 @@ animation: none;
   position: absolute;
   top: 0;
   left: 0;
-  width: 450px;
+  width: 40vw;
   height: 100vh;
 
 }
 .hww_background-1 > .hww_background-img,.hww_background-2 > .hww_background-img,.hww_background-3 > .hww_background-img{
-  width: 450px;
+  width: 40vw;
   height: 100vh;
   background: none;
   
 }
 .how-we-work._active_scroll  .hww_background-1{
 
-  width: 450px;
+  width: 40vw;
   height: 100vh;
   animation: none;
 
   }
   .how-we-work._active_scroll .hww_background-2{
 
-    width: 450px;
+    width: 40vw;
     height: 100vh;
     animation: none;
     box-shadow: none;
@@ -2632,7 +2632,7 @@ animation: none;
     }
     .how-we-work._active_scroll .hww_background-3{
 
-      width: 450px;
+      width: 40vw;
       height: 100vh;
       animation: none;
       
@@ -4394,7 +4394,7 @@ footer{ scroll-snap-align: none;
    position: absolute;
    top: 0;
    left: 0;
-   width: 270px;
+   width: 40vw;
    height: 100vh;
  
  }

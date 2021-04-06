@@ -692,8 +692,8 @@ width: 100%;
   line-height: 54px;
   max-width: 569px;
   /* padding-right: 361px; */
-  padding-right: 150px;
-  padding-left: 400px;
+  padding-right: 10vw;
+  padding-left: 21vw;
   padding-bottom: 15px ;
   /* position: relative; */
   /* border-bottom: 1px solid blue; */
@@ -725,7 +725,7 @@ width: 100%;
 .partfolio_articles > h2::after{
   content: "";
   position: absolute;
-  width:559px;
+  width:29vw;
   height: 2px;
   background-color: #FFC887;
   right: 0;
@@ -1334,8 +1334,8 @@ height: 100%;
   max-width: 569px;
   /* padding-right: 361px; */
   padding-top: 54px;
-  padding-right: 450px;
-  padding-left: 500px;
+  padding-right: 25vw;
+  padding-left: 31vw;
   padding-bottom: 15px ;
   /* position: relative; */
   /* border-bottom: 1px solid blue; */
@@ -1360,7 +1360,8 @@ height: 100%;
 
 .our-command_main_name > h1{
   margin-top: 355px;
-  margin-left: 181px;
+  margin-left: 5vw;
+  padding-right: 10vw;
  
   font-style: normal;
   font-weight: normal;
@@ -1449,7 +1450,11 @@ height: 100%;
 .overflow_scroll:hover >.scroll_block #member4,.overflow_scroll:hover >.scroll_block #member4-info{
    animation-play-state: paused;
 }
-
+.container1_social > ul > li:nth-child(1) > a >img{
+  width: 45px;
+  height: 45px;
+  padding-bottom: 5px;
+}
 
 
 /* footer */
@@ -1660,6 +1665,9 @@ footer{
 
   color: #FFC887;
 
+}
+.popup__contacts > a{
+  margin-left: 15px;
 }
 .popup__logo > img{
   margin-top: 102px;

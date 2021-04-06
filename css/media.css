@@ -3935,6 +3935,31 @@ animation: none;
   width: 60px;
   height: 60px;
 }
+html {
+  /* height: 100vh; */
+  /* overflow: hidden; */
+  scroll-snap-type: none;
+  
+  max-height: 100vh;
+	overflow-y:scroll;
+
+  /* scroll-padding:-100px; */
+}
+main::-webkit-scrollbar {
+  display: none;
+}
+main > section {
+  /* height: 100vh;
+  width: 100%; */
+  scroll-snap-align: none;
+  position: relative;
+  scroll-snap-stop: none;
+}
+header{  scroll-snap-align: none;
+  position: relative;}
+footer{ scroll-snap-align: none;
+  position: relative;}
+
 }
 
 
@@ -5692,4 +5717,28 @@ animation: none;
   text-decoration: none;
   z-index: 2;
 }
+html {
+  /* height: 100vh; */
+  /* overflow: hidden; */
+  scroll-snap-type: none;
+  
+  max-height: 100vh;
+	overflow-y:scroll;
+
+  /* scroll-padding:-100px; */
+}
+main::-webkit-scrollbar {
+  display: none;
+}
+main > section {
+  /* height: 100vh;
+  width: 100%; */
+  scroll-snap-align: none;
+  position: relative;
+  scroll-snap-stop: none;
+}
+header{  scroll-snap-align: none;
+  position: relative;}
+footer{ scroll-snap-align: none;
+  position: relative;}
  }

@@ -1675,16 +1675,7 @@ footer{
 }
 
 
-html {
-  /* height: 100vh; */
-  /* overflow: hidden; */
-  scroll-snap-type: y proximity;
-  
-  max-height: 100vh;
-	overflow-y:scroll;
 
-  /* scroll-padding:-100px; */
-}
 
 .spiner{
   width: 80px;
@@ -1721,7 +1712,16 @@ html {
     transform: rotate(360deg);
   }
 }
+html {
+  /* height: 100vh; */
+  /* overflow: hidden; */
+  scroll-snap-type: y proximity;
+  
+  max-height: 100vh;
+	overflow-y:scroll;
 
+  /* scroll-padding:-100px; */
+}
 main::-webkit-scrollbar {
   display: none;
 }

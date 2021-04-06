@@ -585,7 +585,7 @@
     padding-top: 54px;
     /* padding-right: 250px; */
     padding: 0;
-    margin-left: 400px;
+    margin-left: 24vw;
     margin-top: 100px;
     padding-bottom: 15px;
     /* position: relative; */
@@ -593,7 +593,7 @@
 }
 .our-command_block_name > h2::after{
   content: " ";
-  width: 400px;
+  width: 26vw;
   height: 2px;
   top: 21vh;
   right: 0;
@@ -4655,6 +4655,7 @@ footer{ scroll-snap-align: none;
        content: "";
        position: absolute;
        max-width: 200px;
+       width: 55vw;
        height: 1px;
        opacity: 0.6;
        background-color: #FFC887;

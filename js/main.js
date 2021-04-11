@@ -16,9 +16,19 @@ window.addEventListener('DOMContentLoaded', () =>{
   partfolio_slide_2 = document.querySelector(".partfolio-slide-2"),
   partfolio_slide_3 = document.querySelector(".partfolio-slide-3"),
   partfolio_slide_4 = document.querySelector(".partfolio-slide-4"),
-  partfolio_slide_5 = document.querySelector(".partfolio-slide-5");
+  partfolio_slide_5 = document.querySelector(".partfolio-slide-5"),
+  prev = document.querySelector(".order__prev"),
+  next = document.querySelector(".order__next"),
+  progress_complete = document.querySelector(".progress-complete");
  
-
+  next.addEventListener('click', () =>{
+    form.classList.add('form__next');
+    progress_complete.classList.add('progress-next')
+  })
+  prev.addEventListener('click', () =>{
+    form.classList.remove('form__next');
+    progress_complete.classList.remove('progress-next');
+  })
   function hideContent(){
     service_article.forEach(item => {
       item.classList.remove('service_active');
@@ -306,27 +316,80 @@ window.addEventListener('DOMContentLoaded', () =>{
       // popup.classList.remove("open");  
       // event.preventDefault();
     });
+
   
   })
 
 
+  // Form
+    const form = document.getElementById('form');
+    form.addEventListener('submit', formSend);
+    async function formSend(e) {
+      e.preventDefault();
+      let error = formValidate(form);
+      let formData = new formData(form)
+      if (error === 0) {
+        form.classList.add('_sending');
+        let response = await fetch('sendmail.php',{
+          method:'POST',
+          body: formData
+        });
+
+        if (response.ok) {
+          let result = await response.json();
+          alert(result.message);
+          form.reset();
+          form.classList.remove('_sending');
+        }else{
+          alert("Ошибка");
+          form.classList.remove('_sending');
+        }
+
+      }else{
+        alert('Oshibka')
+      }
+    }
+
+    function formValidate(form) {
+      let error = 0;
+      let formReq = document.querySelectorAll('._req');
+      for (let index = 0; index < formReq.length; index++) {
+        const input = formReq[index];
+        formRemoveError(input);
+        if(input.classList.contains('_email')){
+          if (emailTest(input)) {
+            formAddError(input);
+            error++;
+            }
+          }else{
+            if (input.value === '') {
+              formAddError(input);
+              error++;
+            }
+        }
+      }
+      return error;
+    }
+
+    function formAddError(input) {
+      input.parentElement.classList.add('_error');
+      input.classList.add('_error');
+    };
+    function formRemoveError(input) {
+      input.parentElement.classList.remove('_error');
+      input.classList.remove('_error');
+    };
+
+    function emailTest(input) {
+      return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+    }
 
 
-  const windowInnerWidth = window.innerWidth;
-  const windowInnerHeight = window.innerHeight;
-  console.log(windowInnerWidth);
-  console.log(windowInnerHeight);
-  const screenWidth = window.screen.width;
-  const screenHeight = window.screen.height;
-  
-  console.log(screenWidth);
-  console.log(screenHeight);
-  const windowOuterWidth = window.outerWidth;
-  const windowOuterHeight = window.outerHeight;
-  
-  console.log(windowOuterWidth);
-  console.log(windowOuterHeight);
-  
+
+
+
+
+
 
 
 });

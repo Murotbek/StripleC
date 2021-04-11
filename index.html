@@ -384,7 +384,7 @@
               <li><a href="#service-container">Услуги</a></li>
               <li><a href="#partfolio-container">Портфолио</a></li>
               <li><a href="#hww-container">Как мы работаем</a></li>
-              <li><a href="#stage-container">Этыпы работы</a></li>
+              <li><a href="#stage-container">Этапы работы</a></li>
               <li><a href="#command-container">Команда</a></li>
               <li><a href="#footer-contacts">Контакты</a></li>
             </nav>
@@ -404,6 +404,63 @@
           </div>
         </a>
       </div>
+    </div>
+  </div>
+  <div class="popup_order" id="popup_order">
+    <div class="popup_order__body">
+      <a href="#" class="popup_order__close">&#10006</a>
+      <div class="order_content">
+        <h2>Свяжитесь с нами</h2>
+        <p>Для того чтобы начать работу, нам нужно обсудить детали.<br>
+           Можно позвонить по номеру <span>+998 33 403 70 73,</span><br>
+            или связаться с нами через <a href="https://telegram.me/Deny_d/">Телеграм</a></p>
+      </div>
+      <div class="form">
+        <form action="#" class="form__body" id="form">
+          <div class="form-w1">
+            <div class="form__item">
+            <label for="formName" class="form_label">Ваше Имя</label>
+            <input id="formName" type="text" name="name" class="form__input _req">
+          </div>
+          <div class="form__item">
+            <label for="formNumber" class="form_label">Номер телефона</label>
+            <input id="formNumber" type="text" name="phoneNumber" class="form__input _req">
+          </div>
+          <div class="form__item">
+            <label for="formEmail" class="form_label">E-Mail</label>
+            <input id="formEmail" type="text" name="email" class="form__input _req _email">
+          </div>
+          </div>
+          <div class="form-w2">
+            <div class="choose__project">
+              <h3>Выберите проект</h3>
+              <div class="options">
+                <div class="options__item">
+                  <input checked id="formLanding-page" type="radio" value="landing-page" name="project" class="options__input">
+                  <label for="formLanding-page" class="options__label">Лендинг</label>
+                </div>
+                <div class="options__item">
+                  <input id="formStore" type="radio" value="store" name="project" class="options__input">
+                  <label for="formStore" class="options__label">Интернет-магазин</label>
+                </div>
+                <div class="options__item">
+                  <input id="formCorporate" type="radio" value="corporate" name="project" class="options__input">
+                  <label for="formCorporate" class="options__label">Корпоративный сайт</label>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="form__button">Отправить</button>
+          </div>
+        </form>
+        <div class="progress">
+        <button class="order__prev">Назад</button>
+        <div class="progress-bar">
+          <div class="progress-complete"></div>
+        </div>
+        <button class="order__next">Далее</button>
+      </div>
+      <div class="order_successful"></div>
+    </div>
     </div>
   </div>
   <div id="preloader">

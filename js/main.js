@@ -327,7 +327,7 @@ window.addEventListener('DOMContentLoaded', () =>{
     async function formSend(e) {
       e.preventDefault();
       let error = formValidate(form);
-      let formData = new formData(form)
+      let formData = new formData(form);
       if (error === 0) {
         form.classList.add('_sending');
         let response = await fetch('sendmail.php',{

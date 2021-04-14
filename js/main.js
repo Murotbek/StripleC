@@ -321,6 +321,15 @@ window.addEventListener('DOMContentLoaded', () =>{
   })
 
 
+
+
+
+
+
+
+
+
+
   // Form
     const form = document.getElementById('form');
     form.addEventListener('submit', formSend);
@@ -328,8 +337,10 @@ window.addEventListener('DOMContentLoaded', () =>{
       e.preventDefault();
       let error = formValidate(form);
       let formData = new FormData(form);
+
       if (error === 0) {
         form.classList.add('_sending');
+
         let response = await fetch('sendmail.php',{
           method:'POST',
           body: formData

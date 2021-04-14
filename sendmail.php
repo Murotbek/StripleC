@@ -1,8 +1,8 @@
 <?php
-use PHPMailer\PHPMailer\PHPmailer;
-use PHPMailer\PHPMailer\Exeption;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-require 'phpmailer/src/Exeption.php';
+require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
 
 $mail = new PHPMailer(true);
@@ -10,8 +10,12 @@ $mail->CHarSet = 'UTF-8';
 $mail->setLanguage('ru', 'phpmailer/language/');
 $mail->IsHTML(true);
 
+// $mail->Host = 'ssl://smtp.gmail.com';
+// $mail->Port = 465;
+// $mail->Username = 'murotahmedoc@gmail.com';
+// $mail->Password = '20000920a';
 
-$mail->setForm('murot.ahmedoc@gmail.com', 'Заказчик');
+$mail->setFrom('murotahmedoc@gmail.com', 'Заказчик');
 
 $mail->addAddress('akhmedov_2000@mail.ru');
 
@@ -26,23 +30,24 @@ if($_POST['project'] == "store"){
 
 $body = '<h1>Заказ!</h1>';
 
-if (trim(!empty($_POST['name']))) {0
+if (trim(!empty($_POST['name']))){
   $body.='<p><strong>Имя:</strong> '.$_POST['name'].'<p>';
 }
-if (trim(!empty($_POST['phoneNumber']))) {0
+if (trim(!empty($_POST['phoneNumber']))){
   $body.='<p><strong>Номер телефона:</strong> '.$_POST['phoneNumber'].'<p>';
 }
-if (trim(!empty($_POST['project']))) {0
-  $body.='<p><strong>Вид услуги:</strong> '.$project.'<p>';
-}
-if (trim(!empty($_POST['email']))) {0
+if (trim(!empty($_POST['email']))){
   $body.='<p><strong>E-mail:</strong> '.$_POST['email'].'<p>';
 }
+if (trim(!empty($_POST['project']))){
+  $body.='<p><strong>Вид услуги:</strong> '.$project.'<p>';
+}
+
 
 $mail ->Body = $body;
 
 if(!$mail->send()){
-  $message = 'Ошибка'
+  $message = 'Ошибка';
 }else{
   $message = "Данные отправлены!";
 }

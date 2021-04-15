@@ -20,19 +20,8 @@ window.addEventListener("DOMContentLoaded", () => {
     partfolio_slide_2 = document.querySelector(".partfolio-slide-2"),
     partfolio_slide_3 = document.querySelector(".partfolio-slide-3"),
     partfolio_slide_4 = document.querySelector(".partfolio-slide-4"),
-    partfolio_slide_5 = document.querySelector(".partfolio-slide-5"),
-    prev = document.querySelector(".order__prev"),
-    next = document.querySelector(".order__next"),
-    progress_complete = document.querySelector(".progress-complete");
-
-  next.addEventListener("click", () => {
-    form.classList.add("form__next");
-    progress_complete.classList.add("progress-next");
-  });
-  prev.addEventListener("click", () => {
-    form.classList.remove("form__next");
-    progress_complete.classList.remove("progress-next");
-  });
+    partfolio_slide_5 = document.querySelector(".partfolio-slide-5");
+    
   function hideContent() {
     service_article.forEach((item) => {
       item.classList.remove("service_active");
@@ -313,7 +302,35 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // Form
+  const order = document.querySelector(".order"),
+        popup_order = document.querySelector(".popup_order"),
+        popup_order__close = document.querySelector(".popup_order__close"),
+        order_successful = document.querySelector(".order_successful"),
+        prev = document.querySelector(".order__prev"),
+    next = document.querySelector(".order__next"),
+    progress_complete = document.querySelector(".progress-complete");
+
+  next.addEventListener("click", () => {
+    form.classList.add("form__next");
+    progress_complete.classList.add("progress-next");
+  });
+  prev.addEventListener("click", () => {
+    form.classList.remove("form__next");
+    progress_complete.classList.remove("progress-next");
+  });
+
   const form = document.getElementById("form");
+  order.addEventListener('click', (e)=>{
+    popup_order.classList.add("show_order")
+  });
+  popup_order__close.addEventListener('click', (e) =>{
+    popup_order.classList.add("hide_order");
+    popup_order.classList.remove("show_order");
+    order_successful.classList.add("hide_order")
+    order_successful.classList.remove("show_order")
+    form.classList.remove("form__next");
+    progress_complete.classList.remove("progress-next");
+  })
   form.addEventListener("submit", formSend);
   async function formSend(e) {
     e.preventDefault();
@@ -341,15 +358,27 @@ window.addEventListener("DOMContentLoaded", () => {
 
       if (response.ok) {
         let result = await response.json();
-        alert(result.message);
+        // alert("Успешно");
         form.reset();
         form.classList.remove("_sending");
+        order_successful.classList.remove("hide_order");
+        order_successful.classList.add("show_order")
+        order_successful.style.display = 'block';
+        setTimeout(() =>{  
+          popup_order.classList.add("hide_order");
+          popup_order.classList.remove("show_order");
+          order_successful.classList.add("hide_order")
+          order_successful.classList.remove("show_order")
+          form.classList.remove("form__next");
+          progress_complete.classList.remove("progress-next");
+        },1000)
+
       } else {
         alert("Ошибка");
         form.classList.remove("_sending");
       }
     } else {
-      alert("Oshibka");
+      alert("Ошибка");
     }
   }
 

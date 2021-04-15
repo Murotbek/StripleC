@@ -5,7 +5,7 @@
 	font-weight: normal;
 	font-style: normal;
 }
-
+:focus {outline:none;}
 *{
   box-sizing:border-box;
 }
@@ -199,6 +199,13 @@ main{
    /* background-color: purple ; */
    /* opacity: 0.8; */
    
+}
+.service_article:hover,.service_article:focus,.service_article:active{
+ outline: none;
+ border: 0;
+}
+.service_article{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .service_articles__box{
   padding-top: 14vh;
@@ -685,8 +692,8 @@ width: 100%;
   line-height: 54px;
   max-width: 569px;
   /* padding-right: 361px; */
-  padding-right: 150px;
-  padding-left: 400px;
+  padding-right: 10vw;
+  padding-left: 21vw;
   padding-bottom: 15px ;
   /* position: relative; */
   /* border-bottom: 1px solid blue; */
@@ -718,7 +725,7 @@ width: 100%;
 .partfolio_articles > h2::after{
   content: "";
   position: absolute;
-  width:559px;
+  width:29vw;
   height: 2px;
   background-color: #FFC887;
   right: 0;
@@ -1327,8 +1334,8 @@ height: 100%;
   max-width: 569px;
   /* padding-right: 361px; */
   padding-top: 54px;
-  padding-right: 450px;
-  padding-left: 500px;
+  padding-right: 25vw;
+  padding-left: 31vw;
   padding-bottom: 15px ;
   /* position: relative; */
   /* border-bottom: 1px solid blue; */
@@ -1338,7 +1345,7 @@ height: 100%;
 }
 .our-command_block_name > h2::after{
   content: " ";
-  width: 555px;
+  width: 25vw;
   height: 2px;
   top: 16vh;
   right: 0;
@@ -1353,7 +1360,8 @@ height: 100%;
 
 .our-command_main_name > h1{
   margin-top: 355px;
-  margin-left: 181px;
+  margin-left: 7vw;
+  padding-right: 3vw;
  
   font-style: normal;
   font-weight: normal;
@@ -1442,7 +1450,11 @@ height: 100%;
 .overflow_scroll:hover >.scroll_block #member4,.overflow_scroll:hover >.scroll_block #member4-info{
    animation-play-state: paused;
 }
-
+.container1_social > ul > li:nth-child(1) > a >img{
+  width: 45px;
+  height: 45px;
+  padding-bottom: 5px;
+}
 
 
 /* footer */
@@ -1540,7 +1552,7 @@ footer{
   flex-direction: center;
   text-align: center;
 }
-.popup__close{
+.popup__body >.popup__close{
   position: absolute;
   top: 45px;
   left: 30px;
@@ -1654,6 +1666,9 @@ footer{
   color: #FFC887;
 
 }
+.popup__contacts > a{
+  margin-left: 15px;
+}
 .popup__logo > img{
   margin-top: 102px;
    margin-right: -70px; 
@@ -1664,9 +1679,202 @@ footer{
   text-align: center;
 }
 
+/* Order Form */
+.popup_order{
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .8);
+  top: 0px;
+}
+.popup_order__body{
+  display: block;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  background: #0E0E0E;
+ 
+  width: 1000px;
+  height: 800px;
+  top: 50px;
+  color: white;
+  text-align: center;
+}
+.form{
+  width: 100%;
+  overflow: hidden;
+}
+.form__body{
+  display: flex;
+  flex-direction: row;
+  width: 200%;
+  transition: all 1s ease;
+}
+.form__body.form__next{
+  transform: translateX(-50%);
+}
+.order_content >p> span,.order_content >p> a{
+  color: #FFC887;
+  text-decoration: none;
+}
+.order_content > h2{
+  font-family: 'Alegreya SC', serif;
+  font-size: 50px;
+  line-height: 68px;
+  margin: 15px 0;
+}
+.order_content >p{
+  font-family: 'Alegreya SC', serif;
+  font-size: 25px;
+  line-height: 150%;
+}
+.form__item{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
 
+}
+.form-w1,.form-w2{
+  width: 100%;
+}
+.form__item > label{
+margin-left: 125px;
+width: 200px;
+font-size: 25px;
+text-align: left;
+margin-bottom: 10px;
+}
+.form__item > input{
+  width: 750px;
+  height: 60px;
+  background: #232323;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 25px;
+  color: white;
+  border: none;
+}
+.form__item > input:focus{
+  /* background: white; */
+  border: none;
+}
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+-webkit-text-fill-color: #FFFFFF;
+-webkit-box-shadow: 0 0 0px 1000px #232323 inset;
+transition: background-color 5000s ease-in-out 0s;
 
+}
+.progress{
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.progress-bar{
+  width: 490px;
+  height: 2px;
+  background: white;
+  margin-top: 25px;
+  position: relative;
+}
+.progress-complete{
+  width: 50%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  background: #FFC887;
+  transition: all 1s ease;
+}
+.progress-complete.progress-next{
+  right: 0;
+  left: 50%;
+  background: #FFC887;
+}
+.order__prev,.order__next{
+  padding: 5px 10px;
+  font-size: 25px;
+  font-family: 'Alegreya SC', serif;
+  background: rgba(0, 0, 0, .1);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.choose__project > h3{
+  font-family: 'Alegreya SC', serif;
+  font-size: 20px;
+  line-height: 34px;
+  color: #FFFFFF;
+  width: 200px;
+  margin-left: 130px;
+  
+}
+.options__item{
+  position: relative;
+}
+.options__label{
+  width: 220px;
+  height: 60px;
+  font-family: 'Alegreya SC', serif;
+  padding: 15px 10px;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: center;
+  background: #232323;
+  
+  display: inline-block;
+  
+}
+.options__input{
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  
+}
+.options__input:checked ~ .options__label{
+  background: #FFC887;
+  color: black;
+  
+}
+.options{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 700px;
+  margin: 0 auto;
+}
+.form__button{
+  margin-top: 100px;
+  width: 350px;
+  height: 90px;
+  font-family: 'Alegreya SC', serif;
+  font-size: 30px;
+  line-height: 41px;
+  color: #0E0E0E;
+
+}
+.form__input._error{
+  box-shadow: 0 0 15px red;
+}
+.popup_order__close{
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+}
+/* Preloader and others */
 .mobile_name_command{
   display: none;
 }
@@ -1674,17 +1882,6 @@ footer{
   display: none;
 }
 
-
-html {
-  /* height: 100vh; */
-  /* overflow: hidden; */
-  scroll-snap-type: y proximity;
-  
-  max-height: 100vh;
-	overflow-y:scroll;
-
-  /* scroll-padding:-100px; */
-}
 
 .spiner{
   width: 80px;
@@ -1721,7 +1918,16 @@ html {
     transform: rotate(360deg);
   }
 }
+html {
+  /* height: 100vh; */
+  /* overflow: hidden; */
+  scroll-snap-type: y proximity;
+  
+  max-height: 100vh;
+	overflow-y:scroll;
 
+  /* scroll-padding:-100px; */
+}
 main::-webkit-scrollbar {
   display: none;
 }

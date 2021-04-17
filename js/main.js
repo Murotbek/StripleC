@@ -4,16 +4,13 @@ window.addEventListener("DOMContentLoaded", () => {
     service_landing = document.querySelector(".service_landing"),
     service_store = document.querySelector(".service_store"),
     service_corporate = document.querySelector(".service_corporate"),
-    servise_landing__slider = document.querySelector(
-      ".servise_landing__slider"
-    ),
+    servise_landing__slider = document.querySelector(  ".servise_landing__slider"),
     servise_store__slider = document.querySelector(".servise_store__slider"),
     servise_store2__slider = document.querySelector(".servise_store2__slider"),
-    servise_corporate__slider = document.querySelector(
-      ".servise_corporate__slider"
-    ),
+    servise_corporate__slider = document.querySelector(  ".servise_corporate__slider"),
     burger_menu = document.querySelector(".burger_menu a"),
     popup = document.querySelector(".popup"),
+    body = document.querySelector('html'),
     popup__close = document.querySelector(".popup__close"),
     popup__close_nav = document.querySelectorAll(".popup__navigation nav li "),
     partfolio_slide_1 = document.querySelector(".partfolio-slide-1"),
@@ -276,6 +273,7 @@ window.addEventListener("DOMContentLoaded", () => {
   burger_menu.addEventListener("click", (event) => {
     popup.style.transform = "translate(0,-110%)";
     popup.classList.add("open");
+    body.style.overflow = 'hidden';
     // burger_menu.style.display = "none"
     // burger_menu.style.zIndex = "none"
     setTimeout(() => (popup.style.transform = "translate(0,0)"), 100);
@@ -283,7 +281,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   popup__close.addEventListener("click", (event) => {
     popup.style.transform = "translate(0,-110%)";
-
+    body.style.overflow = 'scroll';
     setTimeout(() => popup.classList.remove("open"), 1000);
     // setTimeout( () => burger_menu.style.display = "block",700)
     // popup.classList.remove("open");
@@ -307,21 +305,28 @@ window.addEventListener("DOMContentLoaded", () => {
         popup_order__close = document.querySelector(".popup_order__close"),
         order_successful = document.querySelector(".order_successful"),
         prev = document.querySelector(".order__prev"),
-    next = document.querySelector(".order__next"),
-    progress_complete = document.querySelector(".progress-complete");
+        next = document.querySelector(".order__next"),
+        progress_complete = document.querySelector(".progress-complete");
 
   next.addEventListener("click", () => {
     form.classList.add("form__next");
     progress_complete.classList.add("progress-next");
+    next.classList.add('hide_order');
+    prev.classList.remove('hide_order');
   });
   prev.addEventListener("click", () => {
     form.classList.remove("form__next");
     progress_complete.classList.remove("progress-next");
+    prev.classList.add('hide_order');
+    next.classList.remove('hide_order');
   });
 
   const form = document.getElementById("form");
   order.addEventListener('click', (e)=>{
-    popup_order.classList.add("show_order")
+    popup_order.classList.remove("hide_order");
+    body.style.overflow = 'hidden';
+    popup_order.classList.add("show_order");
+   
   });
   popup_order__close.addEventListener('click', (e) =>{
     popup_order.classList.add("hide_order");
@@ -330,6 +335,9 @@ window.addEventListener("DOMContentLoaded", () => {
     order_successful.classList.remove("show_order")
     form.classList.remove("form__next");
     progress_complete.classList.remove("progress-next");
+    body.style.overflow = 'scroll';
+    prev.classList.add('hide_order');
+    next.classList.remove('hide_order');
   })
   form.addEventListener("submit", formSend);
   async function formSend(e) {
@@ -371,14 +379,19 @@ window.addEventListener("DOMContentLoaded", () => {
           order_successful.classList.remove("show_order")
           form.classList.remove("form__next");
           progress_complete.classList.remove("progress-next");
+          body.style.overflow = 'scroll';
+          prev.classList.add('hide_order');
+          next.classList.remove('hide_order');
         },1000)
-
+        
       } else {
         alert("Ошибка");
         form.classList.remove("_sending");
+        body.style.overflow = 'scroll';
       }
     } else {
       alert("Ошибка");
+      body.style.overflow = 'scroll';
     }
   }
 
@@ -415,14 +428,19 @@ window.addEventListener("DOMContentLoaded", () => {
   function emailTest(input) {
     return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
   }
+ 
+
 });
 
 window.addEventListener("load", () => {
   const preloaders = document.getElementById("preloader");
+  
   setTimeout(function () {
     preloaders.classList.add("hide");
+    // body.style.overflow = 'scroll';
   }, 1000);
   setTimeout(function () {
     preloaders.style.display = "none";
+    // body.style.overflow = 'scroll';
   }, 1500);
 });

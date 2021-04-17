@@ -12,6 +12,7 @@
 html{
   scroll-behavior: smooth;
   scrollbar-width: none;
+ 
 }
  /* html { overflow:  scroll; }  */
 body{
@@ -19,6 +20,9 @@ body{
   margin: 0;
   scrollbar-width: none;
   position: relative;
+}
+.scroll-body{
+  overflow-y: hidden;
 }
 body::-webkit-scrollbar {
 display: none;
@@ -143,9 +147,11 @@ header{
   text-align: center;
   margin-bottom: 31px;
   padding: 0 5px;
+  border-top: 1px solid black;
+  border-bottom:1px solid black;
   transition: box-shadow .5s ease, color .5s ease;
 }
-.order:hover{
+.container1 > .order:hover{
   /* background: linear-gradient(to right,rgb(255, 255, 255) 50%,rgb(255, 255, 255) 50%); */
   box-shadow: inset 12em 0 white;
   border-top:  1px solid white;
@@ -176,7 +182,7 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 text-align: center;
-width: 170px;
+width: 60px;
 height: 45px;
 /* margin: 0 auto; */
 margin-left: -35px;
@@ -1394,10 +1400,10 @@ height: 100%;
   flex-direction: row;
   justify-content: space-between;
   text-align: center;
-  width: 170px;
+  width: 130px;
   height: 45px;
   /* margin: 0 auto; */
-  margin-left: -35px;
+  margin-left: -40px;
   margin-bottom: 105px;
 }
 *{
@@ -1462,11 +1468,7 @@ height: 100%;
 .overflow_scroll:hover >.scroll_block #member4,.overflow_scroll:hover >.scroll_block #member4-info{
    animation-play-state: paused;
 }
-.container1_social > ul > li:nth-child(1) > a >img{
-  width: 45px;
-  height: 45px;
-  padding-bottom: 5px;
-}
+
 
 
 /* footer */
@@ -1714,10 +1716,14 @@ footer{
   text-align: center;
   position: relative;
 }
+
 .form{
   width: 100%;
   overflow: hidden;
+  position: relative;
+  display: inline-block;
 }
+
 .form__body{
   display: flex;
   flex-direction: row;
@@ -1742,6 +1748,11 @@ footer{
   font-family: 'Alegreya SC', serif;
   font-size: 25px;
   line-height: 150%;
+  
+  width: 650px;
+ 
+  text-align: center;
+  margin: 0 auto;
 }
 .form__item{
   display: flex;
@@ -1889,7 +1900,7 @@ transition: background-color 5000s ease-in-out 0s;
   font-size: 25px;
 }
 .order_successful{
-  display: none;
+  display: block;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1900,17 +1911,24 @@ transition: background-color 5000s ease-in-out 0s;
 .order_successful> img{
   margin-top: 50px;
 }
+.order_successful.hide_order{
+  transform: translateY(0);
+}
 .hide_order{
   opacity: 0;
-  transition: all .2s ease;
+  transition: all .3s ease;
   visibility: hidden;
   z-index: -100;
+  transform: translateY(-100%);
+  /* transform: translateX(100%); */
 }
 .show_order{
-  transition: all .1s ease;
+  transition: all .5s ease;
   opacity: 1;
   z-index: 100;
   visibility: visible;
+  /* transform: translateY(-100px);
+  transform: translateX(100%); */
 }
 
 
@@ -1966,7 +1984,7 @@ html {
   scroll-snap-type: y proximity;
   
   max-height: 100vh;
-	overflow-y:scroll;
+	/* overflow-y:scroll; */
 
   /* scroll-padding:-100px; */
 }

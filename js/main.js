@@ -322,6 +322,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   const form = document.getElementById("form");
+
   order.addEventListener('click', (e)=>{
     popup_order.classList.remove("hide_order");
     body.style.overflow = 'hidden';
@@ -382,7 +383,7 @@ window.addEventListener("DOMContentLoaded", () => {
           body.style.overflow = 'scroll';
           prev.classList.add('hide_order');
           next.classList.remove('hide_order');
-        },1000)
+        },2000)
         
       } else {
         alert("Ошибка");

@@ -16,6 +16,7 @@
   }
   .container1_logo > img{
   width: 130px;
+  height: 100px;
   }
   .name_command > h1 {
 
@@ -1178,6 +1179,7 @@ margin-bottom: 10px;
   }
   .container1_logo > img{
   width: 130px;
+  height: 100px;
   }
   .name_command > h1 {
 
@@ -2630,6 +2632,7 @@ margin-bottom: 10px;
   }
   .container1_logo > img{
   width: 130px;
+  height: 100px;
   }
   .name_command > h1 {
 
@@ -4416,6 +4419,7 @@ footer{ scroll-snap-align: none;
    }
    .container1_logo > img{
    width:130px;
+   height: 100px;
    }
 
  .navigation_service-partfolio > .service-link,.navigation_service-partfolio > .partfolio-link {

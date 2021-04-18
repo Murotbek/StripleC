@@ -1501,6 +1501,10 @@ footer{
   flex-direction: row;
   justify-content: space-between;
 }
+.footer_logo>img{
+width: 168px;
+height: 140px;
+}
 .footer_nav{
   display: flex;
   flex-direction:row ;

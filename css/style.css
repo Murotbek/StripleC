@@ -94,9 +94,9 @@ header{
   height: 90vh;
   padding-top:20px ;
 }
-.container1_logo{
-  /* margin-top: 109px; */
-  /* margin-bottom: 60px; */
+.container1_logo > img{
+  width: 168px;
+  height: 140px;
 }
 .name_command > h1{
   font-family: 'Yessica-Regular';
@@ -149,16 +149,33 @@ header{
   padding: 0 5px;
   border-top: 1px solid black;
   border-bottom:1px solid black;
-  transition: box-shadow .5s ease, color .5s ease;
+  transition: all .5s ease-in, color .5s ease-in;
+  box-shadow: inset 0 0 0 0 white;
+  position: relative;
+ 
+  background-size: 200%;
 }
- .order:hover{
-  /* background: linear-gradient(to right,rgb(255, 255, 255) 50%,rgb(255, 255, 255) 50%); */
-  box-shadow: inset 12em 0 white;
+.order>div{
+height: 100%;
+width: 0%;
+position: absolute;
+left: 0;
+top: 0;
+transition: all .3s ease-in;
+z-index: -1;
+}
+.order:hover > div{
+  width: 100%;
+  background: white;
   border-top:  1px solid white;
   border-bottom:  1px solid white;
- 
-  /* transition:  all 1s ease; */
 }
+
+ .order:hover{
+
+  border-top:  1px solid white;
+  border-bottom:  1px solid white;
+ }
 .order:hover >a{
   color: black;
 }
@@ -1642,6 +1659,7 @@ footer{
 }
 .popup__contacts{
   position: relative;
+  
 }
 .popup__contacts > h4{
   font-family: 'Alegreya SC', serif;

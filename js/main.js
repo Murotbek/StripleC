@@ -300,7 +300,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // Form
-  const order = document.querySelector(".order"),
+  const order = document.querySelectorAll("[data-modal]"),
         popup_order = document.querySelector(".popup_order"),
         popup_order__close = document.querySelector(".popup_order__close"),
         order_successful = document.querySelector(".order_successful"),
@@ -308,6 +308,16 @@ window.addEventListener("DOMContentLoaded", () => {
         next = document.querySelector(".order__next"),
         progress_complete = document.querySelector(".progress-complete");
 
+        order.forEach((item) =>{
+          item.addEventListener('click', (e)=>{
+            popup_order.classList.remove("hide_order");
+            body.style.overflow = 'hidden';
+            popup_order.classList.add("show_order");
+            prev.classList.add('hide_order');
+            next.classList.remove('hide_order');
+           
+          });
+        })
   next.addEventListener("click", () => {
     form.classList.add("form__next");
     progress_complete.classList.add("progress-next");
@@ -323,12 +333,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const form = document.getElementById("form");
 
-  order.addEventListener('click', (e)=>{
-    popup_order.classList.remove("hide_order");
-    body.style.overflow = 'hidden';
-    popup_order.classList.add("show_order");
-   
-  });
+
   popup_order__close.addEventListener('click', (e) =>{
     popup_order.classList.add("hide_order");
     popup_order.classList.remove("show_order");

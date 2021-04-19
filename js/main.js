@@ -296,6 +296,7 @@ window.addEventListener("DOMContentLoaded", () => {
       // setTimeout( () => burger_menu.style.display = "block",700)
       // popup.classList.remove("open");
       // event.preventDefault();
+      body.style.overflow = 'scroll';
     });
   });
 
